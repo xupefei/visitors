@@ -1404,10 +1404,17 @@ int vi_process_os(struct vih *vih, char *agent)
 {
 	/* Order may matter. */
 	char *oslist[] = {
+		"Windows NT 6.3", "Windows 8.1",
+		"Windows NT 6.2", "Windows 8",
+		"Windows NT 6.1", "Windows 7",
+		"Windows NT 6.0", "Windows Vista",
+		"Windows NT 5.1", "Windows XP",
+		"Windows NT 5.0", "Windows 2000",
+		"Windows NT", "Windows NT family",
 		"Windows", NULL,
-		"Win98", "Windows",
-		"Win95", "Windows",
-		"WinNT", "Windows",
+		"Win98", "Windows 98",
+		"Win95", "Windows 95",
+		"WinNT", "Windows NT",
 		"Win32", "Windows",
 		"Linux", NULL,
 		"-linux-", "Linux",
@@ -1431,11 +1438,21 @@ int vi_process_browsers(struct vih *vih, char *agent)
 	 * send an user agent where there is the string "Gecko"
 	 * so it must be before Gecko. */
 	char *browserslist[] = {
+		" OPR/", "Opera 15+",
 		"Opera", NULL,
-		"MSIE 4", "Explorer 4.x",
-		"MSIE 5", "Explorer 5.x",
-		"MSIE 6", "Explorer 6.x",
+		"Trident/7", "Internet Explorer 11",
+		"Trident/6", "Internet Explorer 10",
+		"Trident/5", "Internet Explorer 9",
+		"Trident/4", "Internet Explorer 8",
+		"MSIE 10", "Internet Explorer 10",
+		"MSIE 9", "Internet Explorer 9",
+		"MSIE 8", "Internet Explorer 8",
+		"MSIE 7", "Internet Explorer 7",
+		"MSIE 6", "Internet Explorer 6",
+		"MSIE 5", "Internet Explorer 5",
+		"MSIE 4", "Internet Explorer 4",
 		"MSIE", "Explorer unknown version",
+		"Chrome", "Google Chrome",
 		"Safari", NULL,
 		"Konqueror", NULL,
 		"Galeon", NULL,
@@ -1450,6 +1467,8 @@ int vi_process_browsers(struct vih *vih, char *agent)
 		"w3m", "W3M",
 		"NATSU-MICAN", NULL,
 		"msnbot", "MSNbot",
+		"bingbot", "BingBot",
+		"Baiduspider", "BaiduSpider",
 		"Slurp", "Yahoo Slurp",
 		"Jeeves", "Ask Jeeves",
 		"ZyBorg", NULL,
@@ -2013,6 +2032,7 @@ void om_html_print_header(FILE *fp)
 	fprintf(fp,
 "<html>\n"
 "<head>\n"
+"<meta http-equiv='Content-Type' content='text/html; charset=gbk' />\n"
 "<style>\n"
 "BODY, TD, B, LI, U, DIV, SPAN {\n"
 "	background-color: #ffffff;\n"
