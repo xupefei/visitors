@@ -2032,7 +2032,7 @@ void om_html_print_header(FILE *fp)
 	fprintf(fp,
 "<html>\n"
 "<head>\n"
-"<meta http-equiv='Content-Type' content='text/html; charset=gbk' />\n"
+"<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />\n"
 "<style>\n"
 "BODY, TD, B, LI, U, DIV, SPAN {\n"
 "	background-color: #ffffff;\n"
